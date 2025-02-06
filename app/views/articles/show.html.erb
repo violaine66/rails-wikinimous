@@ -1,0 +1,27 @@
+<div class="show-container">
+  <div class="show">
+      <h1><%= @article.title %></h1>
+
+    <div class="link">
+
+      <div class="edit me-5 ">
+        <%= link_to edit_article_path(@article) do %>
+        <i class="fa-solid fa-pen"></i>
+        <% end %>
+      </div>
+
+      <div class="delete">
+        <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+        <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+
+    </div>
+
+    <div class="show-content border-top">
+      <%= @article.content%>
+    </div>
+
+  </div>
+
+</div>

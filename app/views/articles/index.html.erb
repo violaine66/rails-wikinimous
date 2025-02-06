@@ -1,0 +1,28 @@
+<div class="articles">
+
+  <ul>
+
+    <div class="row justify-content-center mt-3">
+      <% if flash[:notice] %>
+    <div id="alert" class= "alert alert-success col-lg-6 ">
+      <%= flash[:notice] %>
+    </div>
+      <% end %>
+    </div>
+
+    <% @articles.each do |article|%>
+
+        <li class="list-article row justify-content-center">
+            <div class="col-lg-6">
+              <div class="title mt-3">
+                <%= link_to article.title, article_path(article.id) %>
+              </div>
+              <div class="content">
+                <%= article.content%>
+              </div>
+            </div>
+        </li>
+          <% end %>
+  </ul>
+
+</div>
